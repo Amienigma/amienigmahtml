@@ -1,0 +1,258 @@
+Build a fully functional Android-style system application called HTML Runtime.
+
+CORE CONCEPT
+
+The app allows the user to enter or select an offline/local HTML source and instantly turn it into a fully interactive experience inside the application.
+
+The HTML should NOT simply be displayed as a static document. It should run as a real interactive webpage using an embedded browser/WebView-style runtime with support for:
+
+* HTML
+* CSS
+* JavaScript
+* Local assets
+* Images
+* Audio
+* Video
+* Canvas
+* SVG
+* WebGL where supported
+* LocalStorage
+* IndexedDB
+* Cookies/session storage
+* Multiple linked HTML pages
+* Relative file paths
+* JavaScript interactions
+* Forms and buttons
+* Drag-and-drop
+* Touch gestures
+* Responsive layouts
+
+INPUT METHODS
+
+The home screen should provide:
+
+1. Enter Local HTML Path
+Allow the user to enter something such as:
+
+file:///sdcard/MyWebsite/index.html
+
+or:
+
+/sdcard/MyWebsite/index.html
+
+2. Import HTML Project
+
+Allow the user to select an HTML file or an entire folder containing:
+
+index.html
+style.css
+script.js
+assets/
+images/
+audio/
+pages/
+
+The runtime should preserve the directory structure so relative paths continue working.
+
+3. Paste HTML
+
+Provide an editor where the user can paste raw HTML/CSS/JavaScript and immediately launch it.
+
+4. Recent Projects
+
+Display previously opened offline HTML projects.
+
+RUNTIME
+
+When the user launches a project, open it inside a dedicated full-screen runtime.
+
+The experience should behave like an actual application rather than a normal browser.
+
+Include:
+
+* Full-screen mode
+* Back navigation
+* Reload
+* Zoom controls
+* Touch support
+* Keyboard support
+* Orientation control
+* JavaScript execution
+* Console/error reporting
+* Local file access
+* Asset loading
+* Download handling
+* Clipboard support
+* Optional external-link handling
+
+Do NOT require an internet connection.
+
+The runtime should explicitly distinguish between:
+
+OFFLINE LOCAL CONTENT
+
+and
+
+EXTERNAL INTERNET CONTENT
+
+External network requests should be disabled by default, with an optional setting to allow them.
+
+SYSTEM-STYLE UI
+
+Make the interface look like a polished Android system utility rather than a generic website.
+
+Use a dark, technical interface with:
+
+* Minimal UI
+* System-like panels
+* File icons
+* Project cards
+* Terminal-inspired diagnostics
+* Smooth transitions
+* Material-style controls
+* Dark mode
+* Monospace typography for paths and diagnostics
+
+Main screen:
+
+HTML RUNTIME
+[ + OPEN HTML ]
+[ IMPORT PROJECT ]
+[ PASTE HTML ]
+────────────────────
+RECENT PROJECTS
+> Project Alpha
+  /sdcard/Projects/alpha/index.html
+> My Interface
+  /sdcard/WebApps/interface/index.html
+> Offline Dashboard
+  /sdcard/Dashboard/index.html
+────────────────────
+RUNTIME
+Engine: WebView
+Network: OFFLINE
+JavaScript: ENABLED
+Storage: ENABLED
+
+DEVELOPER MODE
+
+Add an optional Developer Mode.
+
+When enabled, provide:
+
+* HTML inspector
+* Console
+* JavaScript errors
+* Network request monitor
+* Storage inspector
+* Local file tree
+* Runtime information
+* Reload button
+* Clear cache
+* Clear local storage
+* View source
+* Edit source
+* Live reload
+
+Example diagnostic panel:
+
+RUNTIME CONSOLE
+[INFO] Loading index.html
+[INFO] JavaScript initialized
+[INFO] 14 assets loaded
+[WARN] External request blocked
+[ERROR] script.js:42
+       ReferenceError: example is not defined
+
+OFFLINE SECURITY MODEL
+
+Treat imported HTML as local application content.
+
+Default permissions:
+
+Network: BLOCKED
+Camera: BLOCKED
+Microphone: BLOCKED
+Location: BLOCKED
+Notifications: BLOCKED
+
+Allow the user to selectively enable permissions.
+
+Do not silently grant dangerous permissions to imported HTML.
+
+PROJECT MANAGEMENT
+
+Allow users to:
+
+* Rename projects
+* Delete projects
+* Duplicate projects
+* Export projects
+* Import projects
+* Set an entry HTML file
+* Pin projects
+* Create shortcuts
+* View project size
+* View file structure
+
+Allow projects to have an optional custom icon and name.
+
+APP-LIKE MODE
+
+Add a feature called:
+
+INSTALL AS LOCAL APP
+
+This should create an app-like launcher entry for the selected HTML project.
+
+Example:
+
+HTML Runtime
+     ↓
+Project
+     ↓
+INSTALL AS LOCAL APP
+     ↓
+My Offline App
+
+When launched, the user should go directly into the HTML runtime without seeing the HTML Runtime management interface.
+
+IMPORTANT IMPLEMENTATION REQUIREMENT
+
+Build this as a functional prototype rather than merely a visual mockup.
+
+The central workflow must actually work:
+
+SELECT HTML
+      ↓
+LOAD LOCAL FILE
+      ↓
+CREATE RUNTIME
+      ↓
+EXECUTE HTML
+      ↓
+EXECUTE CSS
+      ↓
+EXECUTE JAVASCRIPT
+      ↓
+LOAD LOCAL ASSETS
+      ↓
+INTERACTIVE APPLICATION
+
+If the Grok Build environment cannot access arbitrary Android filesystem paths directly, implement a realistic browser-compatible file/project importer using the available APIs and clearly separate the prototype abstraction from capabilities that require a native Android WebView wrapper.
+
+The UI should still be designed around the eventual native Android implementation.
+
+DESIGN GOAL
+
+The final result should feel like a built-in Android system component for running local web applications—somewhere between:
+
+* Android WebView
+* a local HTML browser
+* a lightweight IDE
+* an APK launcher
+* a portable offline web-app runtime
+
+It should feel like something that could realistically be installed on a phone and used to turn folders of HTML/CSS/JS into standalone interactive applications.
+
+Do not populate the interface with fake websites, fake user data, or unnecessary marketing content. Make the HTML runtime itself the centerpiece.

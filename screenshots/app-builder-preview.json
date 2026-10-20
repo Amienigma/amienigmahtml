@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "HTML Runtime",
+      "hasCanvas": false,
+      "bodyTextLen": 296,
+      "bodyTextHash": "c2c37cfbf4ba3c97db6b5e0b7425b4088a3970c4511c61caf5857b6e42eda8cd",
+      "bodyTextPrefix": "SYSTEM HTML RUNTIME Open HTML file:///sdcard/…/index.html Import",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "HTML Runtime",
+      "hasCanvas": false,
+      "bodyTextLen": 296,
+      "bodyTextHash": "c2c37cfbf4ba3c97db6b5e0b7425b4088a3970c4511c61caf5857b6e42eda8cd",
+      "bodyTextPrefix": "SYSTEM HTML RUNTIME Open HTML file:///sdcard/…/index.html Import",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <style>
+    @font-face {
+      font-family: "IBM Plex Sans";
+      src: url("fonts/IBMPlexSans-Medium.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: block;
+    }
+    @font-face {
+      font-family: "IBM Plex Mono";
+      src: url("fonts/IBMPlexMono-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: block;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 1200px;
+      height: 630px;
+      overflow: hidden;
+      background: #0e1214;
+      color: #e7eeea;
+    }
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .frame {
+      position: absolute;
+      inset: 32px;
+      border: 1px solid #242c30;
+      pointer-events: none;
+    }
+    .lockup {
+      display: flex;
+      align-items: center;
+      gap: 52px;
+    }
+    .mark {
+      width: 156px;
+      height: 156px;
+      flex: none;
+      background: #171c1f;
+    }
+    .copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    h1 {
+      font-family: "IBM Plex Sans", sans-serif;
+      font-weight: 500;
+      font-size: 92px;
+      line-height: 0.88;
+      letter-spacing: 0.045em;
+      color: #e7eeea;
+    }
+    h1 span { display: block; }
+    .rule {
+      width: 64px;
+      height: 3px;
+      margin-top: 28px;
+      background: #3ddc84;
+    }
+    .tag {
+      margin-top: 18px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-weight: 400;
+      font-size: 18px;
+      letter-spacing: 0.22em;
+      color: #3ddc84;
+    }
+  </style>
+</head>
+<body>
+  <div class="frame"></div>
+  <div class="lockup">
+    <svg class="mark" viewBox="0 0 32 32" aria-hidden="true">
+      <rect width="32" height="32" fill="#171c1f"/>
+      <path fill="#e7eeea" d="M11.2 3.6 L2.2 16 L11.2 28.4 L14.2 25.2 L7.2 16 L14.2 6.8 Z"/>
+      <path fill="#3ddc84" d="M20.8 3.6 L29.8 16 L20.8 28.4 L17.8 25.2 L24.8 16 L17.8 6.8 Z"/>
+    </svg>
+    <div class="copy">
+      <h1><span>HTML</span><span>RUNTIME</span></h1>
+      <div class="rule"></div>
+      <p class="tag">RUN LOCAL HTML APPS</p>
+    </div>
+  </div>
+</body>
+</html>
